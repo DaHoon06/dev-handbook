@@ -1,11 +1,11 @@
 import {Text, TouchableOpacity, View} from "react-native";
 import {NativeStackScreenProps} from "@react-navigation/native-stack";
-import {RootStackParamList} from "../types/router";
-import {instance} from "../libs/axios";
+import {RootStackParamList} from "@type/router";
+import {instance} from "@lib/axios";
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Test'>;
 
-export function TestScreen(props: Props) {
+export const TestScreen = (props: Props) => {
   const {navigation} = props;
 
   const redirectTest = () => {
