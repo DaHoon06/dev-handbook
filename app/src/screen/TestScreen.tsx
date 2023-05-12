@@ -1,6 +1,7 @@
 import {Text, TouchableOpacity, View} from "react-native";
 import {NativeStackScreenProps} from "@react-navigation/native-stack";
 import {RootStackParamList} from "../types/router";
+import {instance} from "../libs/axios";
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Test'>;
 
@@ -11,15 +12,26 @@ export function TestScreen(props: Props) {
     navigation.navigate("Home")
   }
 
+  const axiosTest = async () => {
+    try {
+      const {data} = await instance.get<any>('/recipes/all-recipes');
+      console.log(data)
+    } catch (e) {
+      throw new Error('악!!');
+    }
+  }
+
   return (
     <View>
-      <Text>
-        TESTasdsadasdadas
-      </Text>
       <TouchableOpacity
         onPress={redirectTest}
       >
-        <Text>TEST</Text>
+        <Text>redirectHome</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={axiosTest}
+      >
+        <Text>AXIOS TEST</Text>
       </TouchableOpacity>
     </View>
   )
