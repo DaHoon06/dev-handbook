@@ -1,6 +1,6 @@
 import {Text, TouchableOpacity, View} from "react-native";
 import {NativeStackScreenProps} from "@react-navigation/native-stack";
-import {RootStackParamList} from "@type/router";
+import {RootStackParamList} from "@src/types/router";
 import {instance} from "@lib/axios";
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Test'>;
