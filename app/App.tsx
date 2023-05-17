@@ -1,5 +1,5 @@
-import {Router} from "@src/router";
+import {Layout} from "@screen/Layout";
 
 export default function App() {
-  return <Router />
+  return <Layout />
 }

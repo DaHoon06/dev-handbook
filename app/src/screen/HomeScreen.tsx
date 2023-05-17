@@ -18,31 +18,7 @@ export const HomeScreen = (props: Props) => {
 
   return (
     <View style={homeStyles.homeContainer}>
-      <TouchableOpacity
-        onPress={redirectHome}
-      >
-        <Text style={homeStyles.homeText}>앱 설정</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        onPress={redirectHome}
-      >
-        <Text style={homeStyles.homeText}>이야기</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        onPress={redirectHome}
-      >
-        <Text style={homeStyles.homeText}>모든 이야기</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        onPress={redirectHome}
-      >
-        <Text style={homeStyles.homeText}>검색</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        onPress={redirectHome}
-      >
-        <Text style={homeStyles.homeText}>글 추가</Text>
-      </TouchableOpacity>
+      <Text>TEST</Text>
     </View>
   )
 }

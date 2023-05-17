@@ -18,3 +18,4 @@ const theme: DefaultTheme = {
   lineHeightRegular: 27,
   lineHeightMicro: 18,
 }
+export default theme;
