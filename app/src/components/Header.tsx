@@ -1,4 +1,4 @@
-import {View} from "react-native";
+import {TouchableOpacity, View} from "react-native";
 import { StyleSheet } from 'react-native';
 import {Colors} from "@asset/styles/colors";
 
@@ -6,9 +6,15 @@ export const Header = () => {
   return (
     <View style={style.header}>
       <View style={style.headerWrapper}>
-        <View style={style.redButton} />
-        <View style={style.yellowButton} />
-        <View style={style.greenButton} />
+        <TouchableOpacity>
+          <View style={style.redButton} />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <View style={style.yellowButton} />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <View style={style.greenButton} />
+        </TouchableOpacity>
       </View>
     </View>
   )
