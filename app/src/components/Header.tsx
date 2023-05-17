@@ -1,12 +1,28 @@
-import {TouchableOpacity, View} from "react-native";
+import {BackHandler, TouchableOpacity, View} from "react-native";
 import { StyleSheet } from 'react-native';
 import {Colors} from "@asset/styles/colors";
+import {useEffect} from "react";
+
 
 export const Header = () => {
+  const handlePressBack = () => {
+    BackHandler.exitApp();
+    return false;
+  }
+
+  useEffect(() => {
+    BackHandler.addEventListener('hardwareBackPress', handlePressBack);
+    return () => {
+      BackHandler.removeEventListener('hardwareBackPress', handlePressBack);
+    }
+  }, [handlePressBack]);
+
   return (
     <View style={style.header}>
       <View style={style.headerWrapper}>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={handlePressBack}
+        >
           <View style={style.redButton} />
         </TouchableOpacity>
         <TouchableOpacity>

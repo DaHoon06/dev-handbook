@@ -13,33 +13,36 @@ type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 export const HomeScreen = (props: Props) => {
   const {navigation} = props;
 
-  const redirectHome = () => {
-    navigation.navigate('AllStory')
-  }
-
-  const redirectController = (type: any) => {
-    navigation.navigate(type);
+  const onClickHandlerCard = (type: any) => {
+    navigation.navigate("Stack", {type});
   }
 
   return (
     <View style={homeStyles.homeContainer}>
       <ScrollView contentContainerStyle={homeStyles.homeItemsWrapper}>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => onClickHandlerCard('JavaScript')}
+        >
           <Card>
             <Image style={homeStyles.imageWrapper} source={JAVASCRIPT} />
           </Card>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => onClickHandlerCard('TypeScript')}>
           <Card>
             <Image style={homeStyles.imageWrapper} source={TYPESCRIPT} />
           </Card>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => onClickHandlerCard('React')}
+        >
           <Card>
             <Image style={homeStyles.imageWrapper} source={REACT} />
           </Card>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => onClickHandlerCard('Vue')}
+        >
           <Card>
             <Image style={homeStyles.imageWrapper} source={VUE} />
           </Card>
