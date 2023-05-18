@@ -7,8 +7,30 @@ import JAVASCRIPT from '@asset/images/javascript.png';
 import TYPESCRIPT from '@asset/images/typescript.png';
 import REACT from '@asset/images/react.png';
 import VUE from '@asset/images/vue.png';
+import {Folder} from "@src/components/folder/Folder";
+import {Header} from "@src/components/Header";
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
+
+
+const categories = [
+  {
+    _id: 'obj-id1',
+    name: 'JavaScript'
+  },
+  {
+    _id: 'obj-id2',
+    name: 'TypeScript'
+  },
+  {
+    _id: 'obj-id3',
+    name: 'React'
+  },
+  {
+    _id: 'obj-id4',
+    name: 'Vue'
+  },
+]
 
 export const HomeScreen = (props: Props) => {
   const {navigation} = props;
@@ -20,33 +42,17 @@ export const HomeScreen = (props: Props) => {
   return (
     <View style={homeStyles.homeContainer}>
       <ScrollView contentContainerStyle={homeStyles.homeItemsWrapper}>
-        <TouchableOpacity
-          onPress={() => onClickHandlerCard('JavaScript')}
-        >
-          <Card>
-            <Image style={homeStyles.imageWrapper} source={JAVASCRIPT} />
-          </Card>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => onClickHandlerCard('TypeScript')}>
-          <Card>
-            <Image style={homeStyles.imageWrapper} source={TYPESCRIPT} />
-          </Card>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => onClickHandlerCard('React')}
-        >
-          <Card>
-            <Image style={homeStyles.imageWrapper} source={REACT} />
-          </Card>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => onClickHandlerCard('Vue')}
-        >
-          <Card>
-            <Image style={homeStyles.imageWrapper} source={VUE} />
-          </Card>
-        </TouchableOpacity>
+        {categories.map((value, index) => {
+          return (
+            <TouchableOpacity
+              key={value._id}
+              style={homeStyles.homeDirectoryButton}
+              onPress={() => onClickHandlerCard(value.name)}
+            >
+              <Folder label={value.name} />
+            </TouchableOpacity>
+          )
+        })}
       </ScrollView>
     </View>
   )

@@ -5,22 +5,16 @@ export const homeStyles = StyleSheet.create({
   homeContainer: {
     flex: 1,
     width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'flex-end',
     backgroundColor: Colors.black200,
     paddingTop: 20
   },
   homeItemsWrapper: {
-    flex: 1,
-    width: '100%',
+    width: 60,
     height: '100%',
-    alignItems: 'center',
+    marginRight: 25,
   },
-  imageWrapper: {
-    flex: 1,
-    width: 100,
-    height: 100,
-    borderBottomLeftRadius: 9,
-    borderTopLeftRadius: 9,
+  homeDirectoryButton: {
+    marginBottom: 20,
   }
 });

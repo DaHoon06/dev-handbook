@@ -3,10 +3,11 @@ import { StyleSheet } from 'react-native';
 import {Colors} from "@asset/styles/colors";
 import {useEffect} from "react";
 
-
 export const Header = () => {
+
   const handlePressBack = () => {
     BackHandler.exitApp();
+
     return false;
   }
 
