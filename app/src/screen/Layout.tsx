@@ -12,7 +12,7 @@ export const Layout = () => {
         flex: 1,
         width: '100%',
         height: '100%',
-        marginTop: 90,
+        paddingTop: 90,
       }}>
         <Router />
       </View>

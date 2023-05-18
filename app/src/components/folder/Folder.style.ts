@@ -6,9 +6,10 @@ export const FolderStyle = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
+    minWidth: 70
   },
   FolderIcon: {
-    width: 40,
+    width: 60,
     height: 40,
   },
   FolderLabel: {
